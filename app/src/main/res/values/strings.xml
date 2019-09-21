@@ -7,4 +7,8 @@
     <string name="password_text">Password</string>
     <string name="back_text">Back</string>
     <string name="login_text">Login</string>
+    <string name="party_title_text">Party Title</string>
+    <string name="party_description_text">Party Description</string>
+    <string name="submit_party_button">Submit</string>
+    <string name="party_address_text">Party Address</string>
 </resources>
