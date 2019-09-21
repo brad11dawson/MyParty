@@ -15,6 +15,9 @@ class SignupActivity : AppCompatActivity() {
     // [START declare_auth]
     private lateinit var auth: FirebaseAuth
     // [END declare_auth]
+    // [START declare_database]
+    private lateinit var db: FirebaseFirestore
+    // [END declare_database]
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +30,8 @@ class SignupActivity : AppCompatActivity() {
         if (auth.currentUser != null) {
             gotoMain()
         }
+
+        db = FirebaseFirestore.getInstance()
     }
 
     // [START on_start_check_user]
@@ -47,6 +52,24 @@ class SignupActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Log.d(TAG, "createUserWithEmail:success")
 
+                    //create a user with the given signup details
+                    val user = hashMapOf(
+                        "firstName" to fName,
+                        "lastName" to lName,
+                        "age" to age,
+                        "email" to email
+                    )
+
+                    db.collection("users").document(email)
+                        .set(user)
+                        .addOnSuccessListener {
+                            gotoMain()
+                        }
+                        .addOnFailureListener {exception ->
+                            Log.w("SignuoActivity", "Error adding user", exception)
+                            Toast.makeText(baseContext, "Error creating account",
+                                Toast.LENGTH_LONG).show()
+                        }
                     gotoMain()
                 } else {
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
