@@ -9,4 +9,8 @@
     <string name="login_text">Login</string>
     <string name="num_char_password">Enter at least 6 characters</string>
     <string name="do_not_have_account">Don\'t have an account?</string>
+    <string name="party_title_text">Party Title</string>
+    <string name="party_description_text">Party Description</string>
+    <string name="submit_party_button">Submit</string>
+    <string name="party_address_text">Party Address</string>
 </resources>
