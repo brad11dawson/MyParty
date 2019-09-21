@@ -18,4 +18,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
     }
+
+    fun gotoAddParty(view: View) {
+        val intent = Intent(this, addPartyActivity::class.java)
+        startActivity(intent)
+    }
 }
