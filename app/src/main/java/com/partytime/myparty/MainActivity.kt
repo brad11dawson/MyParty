@@ -9,8 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -61,6 +63,11 @@ class MainActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
             var party = parties.get(position)
             holder.updateParty(party)
+
+            holder.parentLayout.setOnClickListener {
+                //val intent = Intent(this@MainActivity, addPartyActivity::class.java)
+                //startActivity(intent)
+            }
         }
 
     }
@@ -68,10 +75,12 @@ class MainActivity : AppCompatActivity() {
     class RecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var nameView: TextView
         private var descriptionView: TextView
+        var parentLayout: LinearLayout
 
         init {
             nameView = itemView.findViewById<TextView>(R.id.partyNameView)
             descriptionView = itemView.findViewById<TextView>(R.id.partyDescription)
+            parentLayout = itemView.findViewById(R.id.partyLayout)
         }
 
         fun updateParty(party: PartyListItem) {
@@ -80,13 +89,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    class PartyListItem(name: String, description: String) {
+    class PartyListItem(name: String, description: String, id: String) {
         var partyName: String
         var partyDescription: String
+        var partyId: String
 
         init {
             partyName = name
             partyDescription = description
+            partyId = id
         }
     }
 
@@ -110,9 +121,10 @@ class MainActivity : AppCompatActivity() {
                 for (document in documents) {
                     val name = document.data.getValue("title").toString()
                     val description = document.data.getValue("description").toString()
+                    val id = document.id
                     Log.d(TAG, "title of document: $name")
                     Log.d(TAG, "description of document: $description")
-                    val partylistItem = PartyListItem(name, description)
+                    val partylistItem = PartyListItem(name, description, id)
                     partyList.add(partylistItem)
                 }
                 partyListView.adapter?.notifyDataSetChanged()
