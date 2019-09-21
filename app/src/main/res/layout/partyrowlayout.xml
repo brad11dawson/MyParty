@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/partyLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -8,11 +9,13 @@
         android:id="@+id/partyNameView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Party Name" />
+        android:text="Party Name"
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/partyDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Party Description" />
+        android:text="Party Description"
+        android:textSize="18sp" />
 </LinearLayout>

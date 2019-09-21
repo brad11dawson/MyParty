@@ -1,6 +1,7 @@
 package com.partytime.myparty
 
 import android.content.ClipDescription
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -65,8 +66,11 @@ class MainActivity : AppCompatActivity() {
             holder.updateParty(party)
 
             holder.parentLayout.setOnClickListener {
-                //val intent = Intent(this@MainActivity, addPartyActivity::class.java)
-                //startActivity(intent)
+                Log.d(TAG, "about to go to party view page. party id: ${party.partyId}")
+                val context: Context = it.context
+                var intent = Intent(context, PartyViewActivity::class.java)
+                intent.putExtra("schoolId", party.partyId)
+                context.startActivity(intent)
             }
         }
 
