@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "about to go to party view page. party id: ${party.partyId}")
                 val context: Context = it.context
                 var intent = Intent(context, PartyViewActivity::class.java)
-                intent.putExtra("schoolId", party.partyId)
+                intent.putExtra("partyId", party.partyId)
                 context.startActivity(intent)
             }
         }
