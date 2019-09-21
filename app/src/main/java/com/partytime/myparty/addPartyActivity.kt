@@ -10,10 +10,6 @@ import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_add_party.*
-import android.view.View
-import android.widget.Switch
-import android.widget.TextView
-import androidx.core.view.isVisible
 
 class addPartyActivity : AppCompatActivity() {
 
@@ -140,11 +136,4 @@ class addPartyActivity : AppCompatActivity() {
         private const val TAG = "AddPartyActivity"
     }
 
-        val limitAttendance: TextView = findViewById(R.id.limitAttendance)
-        val isAttendanceToggle: Switch = findViewById(R.id.isAttendanceLimit)
-        isAttendanceToggle.setOnClickListener{View ->
-            limitAttendance.visibility = View.visible
-        }
-
-    }
 }
