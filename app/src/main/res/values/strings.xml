@@ -17,6 +17,7 @@
     <string name="byui">BYU-I</string>
     <string name="ISU">ISU</string>
     <string name="find_party">Find a party!</string>
+    <string name="limitPeople">How many guests?</string>
 
     <string-array name="schools_array">
         <item>BYU - Idaho</item>
