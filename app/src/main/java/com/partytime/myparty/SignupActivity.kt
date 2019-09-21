@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignupActivity : AppCompatActivity() {
     // [START declare_auth]
@@ -31,8 +32,6 @@ class SignupActivity : AppCompatActivity() {
     // [START on_start_check_user]
     public override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        //val currentUser = auth.currentUser
     }
     // [END on_start_check_user]
 
@@ -47,6 +46,7 @@ class SignupActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "createUserWithEmail:success")
+
                     gotoMain()
                 } else {
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
