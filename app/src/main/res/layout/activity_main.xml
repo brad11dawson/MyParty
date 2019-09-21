@@ -53,6 +53,7 @@
         android:background="@color/colorPrimaryDark"
         android:cropToPadding="false"
         android:onClick="gotoAddParty"
+        android:tint="#DCFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/button_add" />
