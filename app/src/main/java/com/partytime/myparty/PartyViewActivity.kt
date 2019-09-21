@@ -1,10 +1,13 @@
 package com.partytime.myparty
 
+import android.content.Intent
 import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 
 class PartyViewActivity : AppCompatActivity() {
@@ -55,9 +58,21 @@ class PartyViewActivity : AppCompatActivity() {
             }
     }
 
-
+    fun gotoHome(view: View) {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
 
     companion object {
         private const val TAG = "PartyViewActivity"
+    }
+
+    fun rsvpToast(view: View) {
+        val text = "RSVP Successfull"
+        val duration = Toast.LENGTH_SHORT
+        val toast = Toast.makeText(applicationContext, text, duration)
+        toast.show()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }
