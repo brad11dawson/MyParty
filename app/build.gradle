@@ -35,6 +35,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
 
     implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    implementation 'com.google.firebase:firebase-auth:19.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
