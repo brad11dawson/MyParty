@@ -22,6 +22,9 @@ class SignupActivity : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
         // [END initialize_auth]
+        if (auth.currentUser != null) {
+            gotoMain()
+        }
     }
 
     // [START on_start_check_user]
@@ -40,6 +43,7 @@ class SignupActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "createUserWithEmail:success")
+                    gotoMain()
                 } else {
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.",
@@ -59,6 +63,11 @@ class SignupActivity : AppCompatActivity() {
 
     fun gotoLogin(view: View) {
         val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
+
+    private  fun gotoMain() {
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 

@@ -45,6 +45,7 @@
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="loginButton"
         android:text="@string/login_text"
         app:layout_constraintBottom_toTopOf="@+id/gotoSignupButton"
         app:layout_constraintEnd_toEndOf="parent"
