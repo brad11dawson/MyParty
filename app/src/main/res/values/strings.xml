@@ -13,4 +13,5 @@
     <string name="party_description_text">Party Description</string>
     <string name="submit_party_button">Submit</string>
     <string name="party_address_text">Party Address</string>
+    <string name="user_age_text">Age</string>
 </resources>

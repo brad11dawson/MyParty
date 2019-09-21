@@ -15,7 +15,6 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/firstNameInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,9 +37,8 @@
         android:ems="10"
         android:hint="@string/lname_text"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/emailInput"
+        app:layout_constraintBottom_toTopOf="@+id/ageInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstNameInput" />
 
@@ -48,14 +46,14 @@
         android:id="@+id/emailInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
         android:ems="10"
         android:hint="@string/email_text"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/passwordInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameInput" />
+        app:layout_constraintTop_toBottomOf="@+id/ageInput" />
 
     <EditText
         android:id="@+id/passwordInput"
@@ -64,9 +62,8 @@
         android:ems="10"
         android:hint="@string/password_text"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/signupButton"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailInput" />
 
@@ -79,7 +76,7 @@
         app:layout_constraintBottom_toTopOf="@+id/gotoLoginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/gotoLoginButton"
@@ -97,8 +94,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/num_char_password"
+        app:layout_constraintBottom_toTopOf="@+id/signupButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+
+    <EditText
+        android:id="@+id/ageInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/user_age_text"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/emailInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lastNameInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
