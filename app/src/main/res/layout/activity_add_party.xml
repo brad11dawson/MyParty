@@ -10,13 +10,12 @@
         android:id="@+id/partyTitleInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="@string/party_title_text"
         android:inputType="textPersonName"
         android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/partyDescriptionInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,26 +23,24 @@
         android:id="@+id/partyDescriptionInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/party_description_text"
         android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/partyTitleInput"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/partyTitleInput"
+        app:layout_constraintBottom_toTopOf="@+id/partyAdressInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/partyTitleInput" />
 
     <EditText
         android:id="@+id/partyAdressInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/party_address_text"
         android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/schoolSpinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/partyDescriptionInput" />
 
@@ -51,51 +48,52 @@
         android:id="@+id/submitPartyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="8dp"
         android:onClick="addPartyClick"
         android:text="@string/submit_party_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/isAlcoholFreeToggle" />
+        app:layout_constraintTop_toBottomOf="@+id/isAttendanceLimit" />
 
     <Switch
         android:id="@+id/isAlcoholFreeToggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="148dp"
         android:text="Alcohol Free "
+        app:layout_constraintBottom_toTopOf="@+id/isAttendanceLimit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/is21Toggle" />
 
     <Switch
         android:id="@+id/is21Toggle"
         android:layout_width="125dp"
         android:layout_height="33dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="148dp"
         android:text="21+"
+        app:layout_constraintBottom_toTopOf="@+id/isAlcoholFreeToggle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <Switch
         android:id="@+id/isAttendanceLimit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="148dp"
         android:text="Attendance Limit "
+        app:layout_constraintBottom_toTopOf="@+id/submitPartyButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/isAlcoholFreeToggle" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        app:layout_constraintBottom_toTopOf="@+id/is21Toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/schoolSpinner">
 
         <RadioButton
             android:id="@+id/moviePartyButton"
@@ -126,12 +124,10 @@
         android:id="@+id/schoolSpinner"
         android:layout_width="225dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginEnd="50dp"
         android:entries="@array/schools_array"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/partyAdressInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
