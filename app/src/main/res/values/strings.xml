@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My Party</string>
+    <string name="fname_text">First Name</string>
+    <string name="goto_signup">Sign Up</string>
 </resources>
