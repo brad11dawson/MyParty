@@ -43,7 +43,7 @@ class addPartyActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun createParty(partyTitle: String, partyDescription: String, partyAddress: String, school: String, partyType: String, is21: Boolean, isAlcoholFree: Boolean, attendanceLimit: Boolean) {
+    private fun createParty(partyTitle: String, partyDescription: String, partyAddress: String, school: String, partyType: String, is21: Boolean, isAlcoholFree: Boolean, attendanceLimit: Boolean, date: String, time: String) {
         val user = auth.currentUser
         user?.let {
             val hostEmail = user.email
@@ -57,7 +57,9 @@ class addPartyActivity : AppCompatActivity() {
                 "type" to partyType,
                 "is21" to is21,
                 "isAlcoholFree" to isAlcoholFree,
-                "attendanceLimit" to attendanceLimit
+                "attendanceLimit" to attendanceLimit,
+                "date" to date,
+                "time" to time
             )
 
             db.collection("parties")
@@ -68,7 +70,7 @@ class addPartyActivity : AppCompatActivity() {
         }
     }
 
-    private fun validateAddParty(partyTitleInput: EditText, partyDescriptionInput: EditText, partyAddressInput: EditText): Boolean {
+    private fun validateAddParty(partyTitleInput: EditText, partyDescriptionInput: EditText, partyAddressInput: EditText, dateInput: EditText, timeInput: EditText): Boolean {
 
         var valid = true
 
@@ -96,6 +98,22 @@ class addPartyActivity : AppCompatActivity() {
             partyAddressInput.error = null
         }
 
+        val partyDate = dateInput.text.toString()
+        if (TextUtils.isEmpty(partyDate)) {
+            dateInput.error = "Required."
+            valid = false
+        } else {
+            dateInput.error = null
+        }
+
+        val partyTime = timeInput.text.toString()
+        if (TextUtils.isEmpty(partyTime)) {
+            timeInput.error = "Required."
+            valid = false
+        } else {
+            timeInput.error = null
+        }
+
         return valid
     }
 
@@ -111,8 +129,10 @@ class addPartyActivity : AppCompatActivity() {
         val is21 = findViewById<Switch>(R.id.is21Toggle)
         val isAlcoholFree = findViewById<Switch>(R.id.isAlcoholFreeToggle)
         val attendanceLimit = findViewById<Switch>(R.id.isAttendanceLimit)
+        val partyDate = findViewById<EditText>(R.id.dateText)
+        val partyTime = findViewById<EditText>(R.id.timeText)
 
-        val valid = validateAddParty(partyTitle, partyDescription, partyAddress)
+        val valid = validateAddParty(partyTitle, partyDescription, partyAddress, partyDate, partyTime)
 
         if (valid) {
             val pTitle = partyTitle.text.toString()
@@ -123,8 +143,10 @@ class addPartyActivity : AppCompatActivity() {
             val pIs21 = is21.isChecked()
             val pIsAlcoholFree = isAlcoholFree.isChecked()
             val pAttendanceLimit = attendanceLimit.isChecked()
+            val date = partyDate.text.toString()
+            val time = partyTime.text.toString()
 
-            createParty(pTitle, pDescription, pAddress, sSchool, pType, pIs21, pIsAlcoholFree, pAttendanceLimit)
+            createParty(pTitle, pDescription, pAddress, sSchool, pType, pIs21, pIsAlcoholFree, pAttendanceLimit, date, time)
         }
         val text = "Party Successfully Added"
         val duration = Toast.LENGTH_SHORT
