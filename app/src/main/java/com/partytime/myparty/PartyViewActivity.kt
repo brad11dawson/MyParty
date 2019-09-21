@@ -19,6 +19,8 @@ class PartyViewActivity : AppCompatActivity() {
     var description: String = ""
     var address: String = ""
     var partyType: String = ""
+    var date: String = ""
+    var time: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,11 +40,14 @@ class PartyViewActivity : AppCompatActivity() {
                     description = document.data?.get("description").toString()
                     address = document.data?.get("address").toString()
                     partyType = document.data?.get("type").toString()
+                    date = document.data?.get("date").toString()
+                    time = document.data?.get("time").toString()
 
                     findViewById<TextView>(R.id.title).text = title
                     findViewById<TextView>(R.id.partyDescriptionText).text = description
                     findViewById<TextView>(R.id.addressText).text = address
                     findViewById<TextView>(R.id.partyTypeText).text = partyType
+                    findViewById<TextView>(R.id.dateTimeView).text = "$date at $time p.m."
                     val hostEmail: String = document.data?.get("hostEmail").toString()
                     Log.d(TAG, "host email is: $hostEmail")
                     db.collection("users").document(hostEmail).get()

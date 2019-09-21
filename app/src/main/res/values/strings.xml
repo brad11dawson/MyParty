@@ -18,6 +18,8 @@
     <string name="ISU">ISU</string>
     <string name="find_party">Find a party!</string>
     <string name="limitPeople">How many guests?</string>
+    <string name="exampleDate">Date: ex. 12/24</string>
+    <string name="exampleTime">Time: ex 8:30</string>
 
     <string-array name="schools_array">
         <item>BYU - Idaho</item>

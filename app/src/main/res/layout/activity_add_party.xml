@@ -1,133 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".addPartyActivity">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/partyTitleInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/party_title_text"
-        android:inputType="textPersonName"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/partyDescriptionInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".addPartyActivity">
 
-    <EditText
-        android:id="@+id/partyDescriptionInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="@string/party_description_text"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/partyAdressInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/partyTitleInput" />
+        <EditText
+            android:id="@+id/partyTitleInput"
+            android:layout_width="266dp"
+            android:layout_height="70dp"
+            android:ems="10"
+            android:hint="@string/party_title_text"
+            android:inputType="textPersonName"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/partyDescriptionInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/partyAdressInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/party_address_text"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/schoolSpinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/partyDescriptionInput" />
+        <EditText
+            android:id="@+id/partyDescriptionInput"
+            android:layout_width="263dp"
+            android:layout_height="70dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/party_description_text"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/partyAdressInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partyTitleInput" />
 
-    <Button
-        android:id="@+id/submitPartyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="addPartyClick"
-        android:text="@string/submit_party_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/isAttendanceLimit" />
+        <EditText
+            android:id="@+id/partyAdressInput"
+            android:layout_width="257dp"
+            android:layout_height="70dp"
+            android:ems="10"
+            android:hint="@string/party_address_text"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/schoolSpinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partyDescriptionInput" />
 
-    <Switch
-        android:id="@+id/isAlcoholFreeToggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Alcohol Free "
-        app:layout_constraintBottom_toTopOf="@+id/isAttendanceLimit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/is21Toggle" />
+        <Button
+            android:id="@+id/submitPartyButton"
+            android:layout_width="118dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="16dp"
+            android:onClick="addPartyClick"
+            android:text="@string/submit_party_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/isAttendanceLimit" />
 
-    <Switch
-        android:id="@+id/is21Toggle"
-        android:layout_width="125dp"
-        android:layout_height="33dp"
-        android:text="21+"
-        app:layout_constraintBottom_toTopOf="@+id/isAlcoholFreeToggle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        <Switch
+            android:id="@+id/isAlcoholFreeToggle"
+            android:layout_width="168dp"
+            android:layout_height="40dp"
+            android:text="Alcohol Free "
+            app:layout_constraintBottom_toTopOf="@+id/isAttendanceLimit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/is21Toggle" />
 
-    <Switch
-        android:id="@+id/isAttendanceLimit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Attendance Limit "
-        app:layout_constraintBottom_toTopOf="@+id/submitPartyButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/isAlcoholFreeToggle" />
+        <Switch
+            android:id="@+id/is21Toggle"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:text="21+"
+            app:layout_constraintBottom_toTopOf="@+id/isAlcoholFreeToggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/is21Toggle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/schoolSpinner">
+        <Switch
+            android:id="@+id/isAttendanceLimit"
+            android:layout_width="168dp"
+            android:layout_height="40dp"
+            android:text="Attendance Limit "
+            app:layout_constraintBottom_toTopOf="@+id/submitPartyButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/isAlcoholFreeToggle" />
 
-        <RadioButton
-            android:id="@+id/moviePartyButton"
-            android:layout_width="125dp"
-            android:layout_height="33dp"
-            android:text="Movie Party" />
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/is21Toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeText">
 
-        <RadioButton
-            android:id="@+id/litPartyButton"
-            android:layout_width="125dp"
-            android:layout_height="30dp"
-            android:text="Lit Party" />
+            <RadioButton
+                android:id="@+id/moviePartyButton"
+                android:layout_width="125dp"
+                android:layout_height="33dp"
+                android:text="Movie Party" />
 
-        <RadioButton
-            android:id="@+id/hackathonButton"
-            android:layout_width="125dp"
-            android:layout_height="30dp"
-            android:text="Hackathon" />
+            <RadioButton
+                android:id="@+id/litPartyButton"
+                android:layout_width="125dp"
+                android:layout_height="30dp"
+                android:text="Lit Party" />
 
-        <RadioButton
-            android:id="@+id/foodPartyButton"
-            android:layout_width="125dp"
-            android:layout_height="30dp"
-            android:text="Food Party" />
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/hackathonButton"
+                android:layout_width="125dp"
+                android:layout_height="30dp"
+                android:text="Hackathon" />
 
-    <Spinner
-        android:id="@+id/schoolSpinner"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:entries="@array/schools_array"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/partyAdressInput" />
+            <RadioButton
+                android:id="@+id/foodPartyButton"
+                android:layout_width="125dp"
+                android:layout_height="30dp"
+                android:text="Food Party" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/schoolSpinner"
+            android:layout_width="253dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:entries="@array/schools_array"
+            app:layout_constraintBottom_toTopOf="@+id/dateText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.485"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partyAdressInput" />
+
+        <EditText
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="@string/exampleDate"
+            android:inputType="date"
+            app:layout_constraintBottom_toTopOf="@+id/timeText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/schoolSpinner" />
+
+        <EditText
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="@string/exampleTime"
+            android:inputType="time"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dateText" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

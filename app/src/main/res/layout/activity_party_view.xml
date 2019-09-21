@@ -10,6 +10,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="title"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toTopOf="@+id/hostNameText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,20 +22,20 @@
         android:id="@+id/partyDescriptionText"
         android:layout_width="347dp"
         android:layout_height="wrap_content"
+        android:text="description"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/addressText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hostNameText" />
+        app:layout_constraintTop_toBottomOf="@+id/dateTimeView" />
 
     <TextView
         android:id="@+id/addressText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="address"
         app:layout_constraintBottom_toTopOf="@+id/partyTypeText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/partyDescriptionText" />
 
@@ -42,7 +43,7 @@
         android:id="@+id/partyTypeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:text="type"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +54,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="gotoHome"
-        android:layout_marginTop="16dp"
         android:text="@android:string/cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +66,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="rsvpToast"
-        android:layout_marginTop="16dp"
         android:text="RSVP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button3"
@@ -78,10 +77,20 @@
         android:id="@+id/hostNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/partyDescriptionText"
+        android:text="host"
+        app:layout_constraintBottom_toTopOf="@+id/dateTimeView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/dateTimeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="date and time"
+        app:layout_constraintBottom_toTopOf="@+id/partyDescriptionText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hostNameText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

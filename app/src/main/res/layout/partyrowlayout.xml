@@ -18,4 +18,9 @@
         android:layout_height="wrap_content"
         android:text="Party Description"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/dateTimeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
