@@ -14,4 +14,10 @@
     <string name="submit_party_button">Submit</string>
     <string name="party_address_text">Party Address</string>
     <string name="user_age_text">Age</string>
+    <string name="find_party">Find a party!</string>
+
+    <string-array name="schools_array">
+        <item>BYU - Idaho</item>
+        <item>Idaho State University</item>
+    </string-array>
 </resources>
