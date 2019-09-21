@@ -126,6 +126,10 @@ class addPartyActivity : AppCompatActivity() {
 
             createParty(pTitle, pDescription, pAddress, sSchool, pType, pIs21, pIsAlcoholFree, pAttendanceLimit)
         }
+        val text = "Party Successfully Added"
+        val duration = Toast.LENGTH_SHORT
+        val toast = Toast.makeText(applicationContext, text, duration)
+        toast.show()
     }
 
     private fun gotoHome() {
