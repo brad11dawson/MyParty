@@ -85,41 +85,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch4" />
 
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="125dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="48dp"
-        android:text="Lit Party"
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/partyAdressInput" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="125dp"
-        android:layout_height="33dp"
-        android:text="Movie Party"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton4" />
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="125dp"
+            android:layout_height="33dp"
+            android:text="Movie Party" />
 
-    <RadioButton
-        android:id="@+id/radioButton3"
-        android:layout_width="125dp"
-        android:layout_height="30dp"
-        android:text="Food Party"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="125dp"
+            android:layout_height="30dp"
+            android:text="Lit Party" />
 
-    <RadioButton
-        android:id="@+id/radioButton4"
-        android:layout_width="125dp"
-        android:layout_height="30dp"
-        android:text="Hackathon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="125dp"
+            android:layout_height="30dp"
+            android:text="Hackathon" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="125dp"
+            android:layout_height="30dp"
+            android:text="Food Party" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
