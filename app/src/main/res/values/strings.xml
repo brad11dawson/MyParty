@@ -2,4 +2,9 @@
     <string name="app_name">My Party</string>
     <string name="fname_text">First Name</string>
     <string name="goto_signup">Sign Up</string>
+    <string name="lname_text">Last Name</string>
+    <string name="email_text">E-mail Address</string>
+    <string name="password_text">Password</string>
+    <string name="back_text">Back</string>
+    <string name="login_text">Login</string>
 </resources>
