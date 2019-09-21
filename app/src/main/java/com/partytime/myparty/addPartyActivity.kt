@@ -162,4 +162,9 @@ class addPartyActivity : AppCompatActivity() {
         private const val TAG = "AddPartyActivity"
     }
 
+
+
+
+
+
 }
