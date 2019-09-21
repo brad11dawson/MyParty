@@ -58,16 +58,16 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Switch
-            android:id="@+id/switch4"
+            android:id="@+id/isAlcoholFreeToggle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="148dp"
             android:text="Alcohol Free"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/switch3" />
+            app:layout_constraintTop_toBottomOf="@+id/is21Toggle" />
 
     <Switch
-        android:id="@+id/switch3"
+        android:id="@+id/is21Toggle"
         android:layout_width="125dp"
         android:layout_height="33dp"
         android:layout_marginTop="32dp"
@@ -77,13 +77,13 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
         <Switch
-            android:id="@+id/switch5"
+            android:id="@+id/isAttendanceLimit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="148dp"
             android:text="Attendance Limit"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/switch4" />
+            app:layout_constraintTop_toBottomOf="@+id/isAlcoholFreeToggle" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -95,32 +95,32 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/moviePartyButton"
             android:layout_width="125dp"
             android:layout_height="33dp"
             android:text="Movie Party" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/litPartyButton"
             android:layout_width="125dp"
             android:layout_height="30dp"
             android:text="Lit Party" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/hackathonButton"
             android:layout_width="125dp"
             android:layout_height="30dp"
             android:text="Hackathon" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/foodPartyButton"
             android:layout_width="125dp"
             android:layout_height="30dp"
             android:text="Food Party" />
     </RadioGroup>
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/schoolSpinner"
         android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
