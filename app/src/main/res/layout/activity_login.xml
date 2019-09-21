@@ -74,4 +74,13 @@
         app:layout_constraintBottom_toTopOf="@+id/gotoSignupButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="194dp"
+        android:layout_height="225dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/party" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
