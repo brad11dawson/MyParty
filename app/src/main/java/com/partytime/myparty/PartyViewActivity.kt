@@ -40,7 +40,15 @@ class PartyViewActivity : AppCompatActivity() {
                     findViewById<TextView>(R.id.partyDescriptionText).text = description
                     findViewById<TextView>(R.id.addressText).text = address
                     findViewById<TextView>(R.id.partyTypeText).text = partyType
-
+                    val hostEmail: String = document.data?.get("hostEmail").toString()
+                    Log.d(TAG, "host email is: $hostEmail")
+                    db.collection("users").document(hostEmail).get()
+                        .addOnSuccessListener { document ->
+                            val fName: String = document.data?.get("firstName").toString()
+                            val lName: String = document.data?.get("lastName").toString()
+                            val host = "Hosted by: $fName $lName"
+                            findViewById<TextView>(R.id.hostNameText).text = host
+                        }
                 }
             }.addOnFailureListener {
                 Log.d(TAG, "failed with ", it)
