@@ -47,25 +47,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/partyDescriptionInput" />
 
-    <Button
-        android:id="@+id/submitPartyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:onClick="addPartyClick"
-        android:text="@string/submit_party_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-        <Switch
-            android:id="@+id/isAlcoholFreeToggle"
+        <Button
+            android:id="@+id/submitPartyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="148dp"
-            android:text="Alcohol Free"
+            android:layout_marginBottom="50dp"
+            android:text="@string/submit_party_button"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/is21Toggle" />
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/isAlcoholFreeToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="148dp"
+        android:text="Alcohol Free "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/is21Toggle" />
 
     <Switch
         android:id="@+id/is21Toggle"
@@ -82,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="148dp"
-        android:text="Attendance Limit"
+        android:text="Attendance Limit "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/isAlcoholFreeToggle" />
 
@@ -131,18 +130,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/limitAttendance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:ems="10"
-        android:hint="@string/limitPeople"
-        android:inputType="textPersonName"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
