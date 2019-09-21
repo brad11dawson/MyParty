@@ -79,28 +79,33 @@ class MainActivity : AppCompatActivity() {
     class RecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var nameView: TextView
         private var descriptionView: TextView
+        private var dateTimeView: TextView
         var parentLayout: LinearLayout
 
         init {
             nameView = itemView.findViewById<TextView>(R.id.partyNameView)
             descriptionView = itemView.findViewById<TextView>(R.id.partyDescription)
+            dateTimeView = itemView.findViewById<TextView>(R.id.dateTimeView)
             parentLayout = itemView.findViewById(R.id.partyLayout)
         }
 
         fun updateParty(party: PartyListItem) {
             nameView?.text = party.partyName
             descriptionView?.text = party.partyDescription
+            dateTimeView?.text = party.dateTime
         }
     }
 
-    class PartyListItem(name: String, description: String, id: String) {
+    class PartyListItem(name: String, description: String, id: String, date: String, time: String) {
         var partyName: String
         var partyDescription: String
         var partyId: String
+        var dateTime: String
 
         init {
             partyName = name
             partyDescription = description
+            dateTime = "$date at $time p.m."
             partyId = id
         }
     }
@@ -125,10 +130,12 @@ class MainActivity : AppCompatActivity() {
                 for (document in documents) {
                     val name = document.data.getValue("title").toString()
                     val description = document.data.getValue("description").toString()
+                    val date = document.data.getValue("date").toString()
+                    val time = document.data.getValue("time").toString()
                     val id = document.id
                     Log.d(TAG, "title of document: $name")
                     Log.d(TAG, "description of document: $description")
-                    val partylistItem = PartyListItem(name, description, id)
+                    val partylistItem = PartyListItem(name, description, id, date, time)
                     partyList.add(partylistItem)
                 }
                 partyListView.adapter?.notifyDataSetChanged()
