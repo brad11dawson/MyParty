@@ -1,10 +1,12 @@
 package com.partytime.myparty
 
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.util.Xml
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -19,6 +21,12 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        val constraintLayout = findViewById<ConstraintLayout>(R.id.loginLayout)
+        val animationDrawable = constraintLayout.getBackground() as AnimationDrawable
+        animationDrawable.setEnterFadeDuration(2000)
+        animationDrawable.setExitFadeDuration(4000)
+        animationDrawable.start()
 
         auth = FirebaseAuth.getInstance()
         if (auth.currentUser != null) {
